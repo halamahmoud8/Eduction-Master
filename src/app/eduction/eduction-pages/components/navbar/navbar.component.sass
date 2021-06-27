@@ -1,0 +1,27 @@
+$main-color: #54b053
+.main-nav 
+  background-color: #222
+  .navbar-brand 
+    font-weight: 700
+    img 
+      mix-blend-mode: multiply
+      width: 6%
+    
+    span 
+      color: $main-color
+    
+  
+  .navbar-nav 
+    .nav-item 
+      &.active 
+        .nav-link 
+          color: $main-color
+        
+      
+    
+  
+  @media (max-width: 768px) 
+    .navbar-brand 
+      width: 70%
+      img 
+        width: 18%

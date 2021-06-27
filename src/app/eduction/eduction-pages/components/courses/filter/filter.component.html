@@ -1,0 +1,19 @@
+<button class="btn filter-toggler" (click)="openFilter()">Filter<i class="fas fa-filter"></i></button>
+<div class="filter" [ngClass]="isOpen ? 'show' : '' "  [ngStyle]="isOpen ? {'display' : 'contents'} : {'display' : 'none'}">
+    <div class="layout">
+        <h6 class="title">Filter BY:</h6>
+        <br>
+        <h6>Course Duration</h6>
+        <div class="custom-control custom-checkbox"  *ngFor="let duration of durations">
+            <input (change)="onClickFilter(false,duration)" type="checkbox" class="custom-control-input" id="{{duration}}">
+            <label class="custom-control-label"  for={{duration}}>{{duration}}</label>
+        </div>
+        <hr>
+        <h6>All Categories</h6>
+        <div class="custom-control custom-checkbox" *ngFor="let category of caterioes">
+            <input (change)="onClickFilter(true ,category)" type="checkbox" class="custom-control-input"  id={{category}}>
+            <label class="custom-control-label" for={{category}}>{{category}}</label>
+        </div>
+        <hr>
+    </div>
+</div>

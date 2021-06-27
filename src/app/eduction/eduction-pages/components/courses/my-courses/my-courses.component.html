@@ -1,0 +1,9 @@
+<div class="layout">
+    <h6 class="sec-title">My Courses</h6>
+    <div class="media filter-media" *ngFor="let course of myCourses">
+        <img [src]="course.CourseImg" class="mr-3" alt="...">
+        <div class="media-body">
+            <p class="mt-0">{{course.CourseName}}</p>
+        </div>
+    </div>
+</div>

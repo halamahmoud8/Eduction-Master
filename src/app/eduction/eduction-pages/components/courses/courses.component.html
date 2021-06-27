@@ -1,0 +1,13 @@
+<section class="all-courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <app-filter (filterEventEmitter)="changeFilterValue($event)"></app-filter>
+                <app-my-courses [myCourses]= "myCourses"></app-my-courses>
+            </div>
+            <div class="col-md-9">
+                <app-list (addToCardEmitter)="addToCard($event)"  [courseList]="displayedCourses"></app-list>
+            </div> 
+        </div>
+    </div>
+</section>

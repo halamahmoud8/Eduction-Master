@@ -1,0 +1,28 @@
+<div class="courses-list">
+    <h5 class="mb-3">All Courses</h5>
+    <div class="line"></div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let course of courseList">
+            <div class="card course-card">
+                <img src="{{course.CourseImg}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{course.CourseName}}</p>
+                    <div class="row">
+                        <ul class="info-list col-4">
+                            <li>{{course.courseLevel}}</li>
+                            <li>Duration:{{course.CourseDuration}}H</li>
+                        </ul>
+                        <ul class="info-list col-3">
+                            <li><i [ngStyle]="course.AvailableSeats < 10 ? {'color': 'red' }: {'color':'green'}" data-toggle="tooltip" data-placement="top" title="Avaliable Seat = {{course.AvailableSeats}}"
+                                    class="fas fa-users"></i>{{course.AvailableSeats}} </li>
+                            <li>${{course.CoursePrice}}</li>
+                        </ul>
+                        <div class="add-cart col-5 p-0 mt-1">
+                            <button class="btn course-btn" (click)= "addToCard(course)" [disabled]= "course.added || course.AvailableSeats ==0">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
